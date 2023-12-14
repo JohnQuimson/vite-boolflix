@@ -7,7 +7,7 @@ export default {
 };
 </script>
 
-<template>funziona tutto</template>
+<template></template>
 
 <style scoped lang="scss">
 @use '../assets/scss/style.scss' as *;
