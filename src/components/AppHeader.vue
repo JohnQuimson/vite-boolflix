@@ -1,14 +1,20 @@
 <script>
+import { store } from '../store';
+
 export default {
   name: 'Header',
   data() {
-    return {};
+    return {
+      store,
+    };
   },
+  methods: {},
+  created() {},
 };
 </script>
 
-<template></template>
+<template>
+  <header></header>
+</template>
 
-<style scoped lang="scss">
-@use '../assets/scss/style.scss' as *;
-</style>
+<style lang="scss"></style>

@@ -1,16 +1,37 @@
 <script>
+import Film from './Film.vue';
+import FilterSearch from './FilterSearch.vue';
+import { store } from '../store';
+
 export default {
   name: 'Main',
-  components: {},
+
+  data() {
+    return {
+      store,
+    };
+  },
+
+  components: {
+    Film,
+    FilterSearch,
+  },
 };
 </script>
 
 <template>
-  <form>
-    <label for="filmName">Inserisci il nome del film</label>
-    <input type="text" placeholder="nome film" v-model="searchKey" />
-    <button type="submit">submit</button>
-  </form>
+  <main>
+    <FilterSearch @call="$emit('search')" />
+    <ul>
+      <Film
+        v-for="film in store.films"
+        :titolo="film.titolo"
+        :titOrig="film.titOrig"
+        :lingua="film.lingua"
+        :voto="film.voto"
+      />
+    </ul>
+  </main>
 </template>
 
 <style lang="scss" scoped></style>
