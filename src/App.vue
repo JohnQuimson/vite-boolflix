@@ -46,7 +46,7 @@ export default {
 
 <template>
   <AppHeader />
-  <AppMain @search="filterFilms()" />
+  <AppMain @call="filterFilms()" />
   <AppFooter />
 </template>
 

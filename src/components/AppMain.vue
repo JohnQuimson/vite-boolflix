@@ -21,14 +21,14 @@ export default {
 
 <template>
   <main>
-    <FilterSearch @call="$emit('search')" />
+    <FilterSearch @call="$emit('call')" />
     <ul>
       <Film
         v-for="film in store.films"
-        :titolo="film.titolo"
-        :titOrig="film.titOrig"
-        :lingua="film.lingua"
-        :voto="film.voto"
+        :titolo="film.title"
+        :titOrig="film.original_title"
+        :lingua="film.original_language"
+        :voto="film.vote_average"
       />
     </ul>
   </main>

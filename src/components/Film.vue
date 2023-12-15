@@ -20,9 +20,9 @@ export default {
   <li>
     <div>
       <h3>{{ titolo }}</h3>
-      <h4>titolo originale</h4>
-      <p>lingua</p>
-      <p>voto</p>
+      <h4>{{ titOrig }}</h4>
+      <p>{{ lingua }}</p>
+      <p>{{ voto }}</p>
     </div>
   </li>
 </template>
