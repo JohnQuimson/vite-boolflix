@@ -41,6 +41,7 @@ export default {
     <ul>
       <Serie
         v-for="serie in store.series"
+        :imgSerie="serie.poster_path"
         :titoloSerie="serie.name"
         :titOrigSerie="serie.original_name"
         :linguaSerie="serie.original_language"
@@ -50,4 +51,8 @@ export default {
   </main>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+h2 {
+  background-color: purple;
+}
+</style>

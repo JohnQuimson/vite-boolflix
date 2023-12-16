@@ -7,7 +7,7 @@ export default {
 
   data() {
     return {
-      // store,
+       store,
     };
   },
 
@@ -18,14 +18,21 @@ export default {
 
 <template>
   <li>
-    <div>
-      <div class="cont-cover">
-        <img :src="`https://image.tmdb.org/t/p/w342${imgFilm}`" alt="img-cover" />
-      </div>
+      <!-- Copertina -->
+      <div v-if="imgFilm !== null" class="cont-cover">
+      <img 
+        :src="`${store.imgUrlBase}${imgFilm}`" 
+        :alt="`cover-${titoloFilm}`">
+    </div>
+    <div v-else class="cont-no-cover">
+      <h2>No cover</h2>
+    </div>
 
+      <!-- Titoli -->
       <h3>{{ titoloFilm }}</h3>
       <h4>{{ titOrigFilm }}</h4>
 
+      <!-- Lingua -->
       <p v-if="linguaFilm === 'it'">
         {{ linguaFilm }}
         <div class="cont-flag">
@@ -42,12 +49,12 @@ export default {
         {{ linguaFilm }}
       </p>
 
+      <!-- Voto -->
       <p>{{ votoFilm }}</p>
-    </div>
   </li>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .cont-cover{
   width: 200px;
   
@@ -58,5 +65,9 @@ export default {
 
 .cont-flag {
   width: 50px;
+
+  img{
+    width: 100%;
+  }
 }
 </style>
