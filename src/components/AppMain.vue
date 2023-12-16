@@ -29,6 +29,7 @@ export default {
     <ul>
       <Film
         v-for="film in store.films"
+        :imgFilm="film.poster_path"
         :titoloFilm="film.title"
         :titOrigFilm="film.original_title"
         :linguaFilm="film.original_language"
