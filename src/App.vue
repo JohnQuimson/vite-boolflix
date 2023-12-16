@@ -22,8 +22,8 @@ export default {
   },
 
   methods: {
-    filterFilms() {
-      console.log(store.config.apiMoviesUrl);
+    Search() {
+      //film
       axios
         .get(store.config.apiMoviesUrl, {
           params: {
@@ -33,11 +33,32 @@ export default {
         })
         .then((response) => {
           store.films = response.data.results;
+          console.log('Film');
           console.log(response);
         })
         .catch((error) => {
           console.log(error.message);
           this.errorMessage = error.message;
+          this.store.films = [];
+        });
+
+      //serie tv
+      axios
+        .get(store.config.apiSeriesUrl, {
+          params: {
+            api_key: store.config.apiKey,
+            query: store.searchKey,
+          },
+        })
+        .then((response) => {
+          store.series = response.data.results;
+          console.log('Serie');
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.message);
+          this.errorMessage = error.message;
+          this.store.series = [];
         });
     },
   },
@@ -46,7 +67,7 @@ export default {
 
 <template>
   <AppHeader />
-  <AppMain @call="filterFilms()" />
+  <AppMain @call="Search()" />
   <AppFooter />
 </template>
 

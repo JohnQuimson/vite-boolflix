@@ -1,7 +1,7 @@
 <script>
 export default {
-  name: 'Film',
-  props: ['titoloFilm', 'titOrigFilm', 'linguaFilm', 'votoFilm'],
+  name: 'Serie',
+  props: ['titoloSerie', 'titOrigSerie', 'linguaSerie', 'votoSerie'],
 
   data() {
     return {
@@ -17,22 +17,22 @@ export default {
 <template>
   <li>
     <div>
-      <h3>{{ titoloFilm }}</h3>
-      <h4>{{ titOrigFilm }}</h4>
+      <h3>{{ titoloSerie }}</h3>
+      <h4>{{ titOrigSerie }}</h4>
 
-      <p v-if="linguaFilm === 'it'">
-        {{ linguaFilm }}
+      <p v-if="linguaSerie === 'it'">
+        {{ linguaSerie }}
         <img src="../../public/img/it-flag.jpg" alt="it-flag" />
       </p>
-      <p v-else-if="linguaFilm === 'en'">
-        {{ linguaFilm }}
+      <p v-else-if="linguaSerie === 'en'">
+        {{ linguaSerie }}
         <img src="../../public/img/en-flag.jpg" alt="en-flag" />
       </p>
-      <p v-else="linguaFilm === 'en'">
-        {{ linguaFilm }}
+      <p v-else="linguaSerie === 'en'">
+        {{ linguaSerie }}
       </p>
 
-      <p>{{ votoFilm }}</p>
+      <p>{{ votoSerie }}</p>
     </div>
   </li>
 </template>
