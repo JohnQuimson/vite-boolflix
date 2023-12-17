@@ -14,7 +14,18 @@ export default {
   data() {
     return {
       store,
+      maxStarsSerie: 5,
     };
+  },
+
+  computed:{
+    FullStarsSerie() {
+      return Math.ceil(this.votoSerie / 2);
+    },
+
+    emptyStarsSerie() {
+      return this.maxStarsSerie - this.FullStarsSerie;
+    },
   },
 
   methods: {},
@@ -53,7 +64,14 @@ export default {
       {{ linguaSerie }}
     </p>
 
-    <p>{{ votoSerie }}</p>
+   
+    <font-awesome-icon 
+    icon="fa-solid fa-star" 
+    v-for="n in this.FullStarsSerie" />
+    <font-awesome-icon 
+    icon="fa-regular fa-star" 
+    v-for="n in this.emptyStarsSerie" />
+
   </li>
 </template>
 
