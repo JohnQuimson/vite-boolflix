@@ -25,7 +25,7 @@ export default {
   <main>
     <!-- FILM -->
     <h2 v-if="store.films.length">Film</h2>
-    <ul>
+    <ul class="row">
       <Film
         v-for="film in store.films"
         :imgFilm="film.poster_path"
@@ -51,7 +51,19 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-h2 {
-  background-color: purple;
+main {
+  background-color: #141414;
+  color: white;
+
+  h2 {
+    background-color: purple;
+  }
+
+  ul {
+    border: 1px solid yellow;
+    background-color: blue;
+    width: 90vw;
+    margin: 0 auto;
+  }
 }
 </style>
