@@ -1,20 +1,33 @@
 <script>
-import { store } from '../store';
+import Search from './Search.vue';
+import Logo from './Logo.vue';
 
 export default {
-  name: 'Header',
+  name: 'Main',
+
   data() {
-    return {
-      store,
-    };
+    return {};
   },
-  methods: {},
-  created() {},
+
+  components: {
+    Search,
+    Logo,
+  },
 };
 </script>
 
 <template>
-  <header></header>
+  <header>
+    <Logo />
+    <Search @call="$emit('call')" />
+  </header>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+header {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+</style>

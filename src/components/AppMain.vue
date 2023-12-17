@@ -1,7 +1,7 @@
 <script>
 import Film from './Film.vue';
 import Serie from './Serie.vue';
-import Search from './Search.vue';
+
 import { store } from '../store';
 
 export default {
@@ -15,7 +15,7 @@ export default {
 
   components: {
     Film,
-    Search,
+
     Serie,
   },
 };
@@ -23,7 +23,6 @@ export default {
 
 <template>
   <main>
-    <Search @call="$emit('call')" />
     <!-- FILM -->
     <h2 v-if="store.films.length">Film</h2>
     <ul>

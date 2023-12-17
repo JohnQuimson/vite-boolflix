@@ -23,7 +23,7 @@ export default {
 
   methods: {
     Search() {
-      //film
+      //filmsenza
       axios
         .get(store.config.apiMoviesUrl, {
           params: {
@@ -66,8 +66,8 @@ export default {
 </script>
 
 <template>
-  <AppHeader />
-  <AppMain @call="Search()" />
+  <AppHeader @call="Search()" />
+  <AppMain />
   <AppFooter />
 </template>
 
