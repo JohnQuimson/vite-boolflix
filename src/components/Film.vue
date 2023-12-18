@@ -109,8 +109,13 @@ li {
   padding: 0;
 
   &:hover {
-    border: 1px solid white;
+    border: 3px solid #dd1a24;
     cursor: pointer;
+    -webkit-box-shadow: 0px 0px 20px 0px #dd1a24;
+    -moz-box-shadow: 0px 0px 20px 0px #dd1a24;
+    box-shadow: 0px 0px 20px 0px #dd1a24;
+    transform: translate(0, -10px);
+    transition: transform 0.5s;
   }
 
   &:hover .cont-cover,

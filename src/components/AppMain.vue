@@ -80,6 +80,7 @@ main {
     height: 500px;
     flex-wrap: nowrap;
     overflow-x: scroll;
+    padding: 30px 20px 20px 20px;
   }
 }
 </style>
