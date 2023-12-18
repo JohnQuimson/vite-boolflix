@@ -9,7 +9,6 @@ export default {
     return {
       store,
       maxStarsFilm: 5,
-      showInfo: false,
     };
   },
 
@@ -23,12 +22,7 @@ export default {
     },
   },
 
-  methods: {
-    turnCard() {
-      this.showInfo = !this.showInfo;
-      console.log(this.showInfo);
-    },
-  },
+  methods: {},
   created() {},
 };
 </script>
@@ -37,7 +31,7 @@ export default {
   <li class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 col-xxl-2">
     <!-- Copertina -->
     <template v-if="imgFilm !== null">
-      <div @click="this.turnCard" v-show="!showInfo" class="cont-cover">
+      <div class="cont-cover">
         <img
           :src="`${store.imgUrlBase}${imgFilm}`"
           :alt="`cover-${titoloFilm}`"
@@ -50,13 +44,12 @@ export default {
       <h2>No cover</h2>
     </div>
 
-    <div v-show="showInfo" class="info">
+    <div class="info">
       <!-- Titoli -->
       <h3>{{ titoloFilm }}</h3>
       <span>original title: {{ titOrigFilm }}</span>
 
       <!-- Lingua -->
-
       <div class="cont-lingua" v-if="linguaFilm === 'it'">
         <p>{{ linguaFilm }}</p>
         <div class="cont-flag">
@@ -99,14 +92,31 @@ li {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 30px;
 
+  &:hover .cont-cover {
+    opacity: 0;
+  }
+
+  &:hover .info {
+    opacity: 1;
+  }
   // copertina
   .cont-cover {
-    width: 200px;
+    width: 100%;
+    height: 100%;
 
     img {
       width: 100%;
+      object-fit: contain;
     }
+  }
+
+  .info {
+    position: absolute;
+    opacity: 0;
   }
 
   // titoli
