@@ -35,7 +35,7 @@ export default {
 </script>
 
 <template>
-  <li class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 col-xxl-2">
+  <li class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3 col-xxl-2">
     <!-- Copertina -->
     <template v-if="imgSerie !== null">
       <div class="cont-cover">

@@ -15,7 +15,6 @@ export default {
 
   components: {
     Film,
-
     Serie,
   },
 };
@@ -25,7 +24,7 @@ export default {
   <main>
     <!-- FILM -->
     <h2 v-if="store.films.length">Film</h2>
-    <ul class="row container-sm">
+    <ul class="row">
       <Film
         v-for="film in store.films"
         :imgFilm="film.poster_path"
@@ -38,7 +37,7 @@ export default {
     </ul>
     <!-- SERIE TV -->
     <h2 v-if="store.series.length">Serie TV</h2>
-    <ul class="row container-sm">
+    <ul class="row">
       <Serie
         v-for="serie in store.series"
         :imgSerie="serie.poster_path"
@@ -75,9 +74,12 @@ main {
     margin: 30px auto;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     column-gap: 30px;
     row-gap: 20px;
+    height: 500px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
   }
 }
 </style>

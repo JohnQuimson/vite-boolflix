@@ -34,8 +34,9 @@ export default {
 };
 </script>
 
+<!-- class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 col-xxl-2" -->
 <template>
-  <li class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 col-xxl-2">
+  <li class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3 col-xxl-2">
     <!-- Copertina -->
     <template v-if="imgFilm !== null">
       <div class="cont-cover">
@@ -100,7 +101,6 @@ export default {
 <style lang="scss" scoped>
 li {
   display: flex;
-  flex-direction: column;
   align-items: center;
   text-align: center;
   overflow: hidden;
@@ -207,32 +207,5 @@ li {
     color: rgb(231, 198, 6);
     font-size: 20px;
   }
-}
-
-/* 
----------------------
-CUSTOM SCROLL-BAR
----------------------
-*/
-
-/* Larghezza */
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-/* Percorso (in questo caso nascosto) */
-::-webkit-scrollbar-track {
-  background: none;
-}
-
-/* stile scroll-bar */
-::-webkit-scrollbar-thumb {
-  background-color: rgba(110, 110, 110, 0.8);
-  border-radius: 20px;
-}
-
-/* Hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #888;
 }
 </style>
