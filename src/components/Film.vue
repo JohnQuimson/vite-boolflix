@@ -41,7 +41,7 @@ export default {
     </template>
 
     <div v-else class="cont-no-cover">
-      <h2>No cover</h2>
+      <img src="../../public/img/no-image.jpg" alt="" />
     </div>
 
     <div class="info">
@@ -87,7 +87,6 @@ export default {
 
 <style lang="scss" scoped>
 li {
-  border: 1px solid white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,8 +94,15 @@ li {
   overflow: hidden;
   position: relative;
   border-radius: 30px;
+  padding: 0;
 
-  &:hover .cont-cover {
+  &:hover {
+    border: 1px solid white;
+    cursor: pointer;
+  }
+
+  &:hover .cont-cover,
+  &:hover .cont-no-cover {
     opacity: 0;
   }
 
@@ -110,19 +116,36 @@ li {
 
     img {
       width: 100%;
-      object-fit: contain;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .cont-no-cover {
+    opacity: 0.1;
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
   .info {
     position: absolute;
     opacity: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10%;
   }
 
   // titoli
   h3 {
-    margin-top: 30%;
+    font-size: 20px;
   }
+
   span {
     color: grey;
     font-size: 14px;

@@ -25,7 +25,7 @@ export default {
   <main>
     <!-- FILM -->
     <h2 v-if="store.films.length">Film</h2>
-    <ul class="row">
+    <ul class="row container-sm">
       <Film
         v-for="film in store.films"
         :imgFilm="film.poster_path"
@@ -37,7 +37,7 @@ export default {
     </ul>
     <!-- SERIE TV -->
     <h2 v-if="store.series.length">Serie TV</h2>
-    <ul class="row">
+    <ul class="row container-sm">
       <Serie
         v-for="serie in store.series"
         :imgSerie="serie.poster_path"
@@ -56,13 +56,25 @@ main {
   color: white;
 
   h2 {
-    background-color: purple;
+    margin-top: 2vw;
+    text-align: center;
+    text-transform: uppercase;
+    background: rgb(91, 16, 16);
+    background: linear-gradient(
+      180deg,
+      rgba(91, 16, 16, 1) 0%,
+      rgba(20, 20, 20, 1) 80%
+    );
   }
 
   ul {
     width: 90vw;
-    margin: 0 auto;
-    padding-left: 0;
+    margin: 30px auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+    row-gap: 20px;
   }
 }
 </style>
