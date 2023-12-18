@@ -60,6 +60,8 @@ export default {
           this.errorMessage = error.message;
           this.store.series = [];
         });
+
+      store.searchKey = '';
     },
   },
 };
