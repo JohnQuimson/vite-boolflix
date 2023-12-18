@@ -115,7 +115,7 @@ li {
 
   &:hover .cont-cover,
   &:hover .cont-no-cover {
-    opacity: 0;
+    opacity: 0.1;
   }
 
   &:hover .info {
