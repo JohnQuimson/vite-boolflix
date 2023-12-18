@@ -13,6 +13,8 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 //empty star
 import { faStar as faStarVuota } from '@fortawesome/free-regular-svg-icons';
+//lente ingrandimento
+// import { faMagnifyingGlass } from '@fortawesome/free-regular-svg-icons';
 
 library.add(faStar, faStarVuota);
 // Vue App

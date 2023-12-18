@@ -16,4 +16,14 @@ export default {
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.cont-logo {
+  width: 250px;
+  padding: 20px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+</style>

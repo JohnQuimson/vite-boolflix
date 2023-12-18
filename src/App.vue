@@ -66,9 +66,13 @@ export default {
 </script>
 
 <template>
-  <AppHeader @call="Search()" />
-  <AppMain />
-  <AppFooter />
+  <div class="cont-master">
+    <div>
+      <AppHeader @call="Search()" />
+      <AppMain />
+      <AppFooter />
+    </div>
+  </div>
 </template>
 
 <style lang="scss">

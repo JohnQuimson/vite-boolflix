@@ -26,6 +26,7 @@ export default {
   methods: {
     turnCard() {
       this.showInfo = !this.showInfo;
+      console.log(this.showInfo);
     },
   },
   created() {},
@@ -52,36 +53,41 @@ export default {
     <div v-show="showInfo" class="info">
       <!-- Titoli -->
       <h3>{{ titoloFilm }}</h3>
-      <h4>{{ titOrigFilm }}</h4>
+      <span>original title: {{ titOrigFilm }}</span>
 
       <!-- Lingua -->
-      <div v-if="linguaFilm === 'it'">
+
+      <div class="cont-lingua" v-if="linguaFilm === 'it'">
         <p>{{ linguaFilm }}</p>
         <div class="cont-flag">
           <img src="../../public/img/it-flag.jpg" alt="it-flag" />
         </div>
       </div>
 
-      <div v-else-if="linguaFilm === 'en'">
+      <div class="cont-lingua" v-else-if="linguaFilm === 'en'">
         <p>{{ linguaFilm }}</p>
         <div class="cont-flag">
           <img src="../../public/img/en-flag.jpg" alt="en-flag" />
         </div>
       </div>
 
-      <p v-else="linguaFilm === 'en'">
-        {{ linguaFilm }}
-      </p>
-      <!-- Voto -->
+      <div class="cont-lingua" v-else>
+        <p>
+          {{ linguaFilm }}
+        </p>
+      </div>
 
-      <font-awesome-icon
-        icon="fa-solid fa-star"
-        v-for="n in this.FullStarsFilm"
-      />
-      <font-awesome-icon
-        icon="fa-regular fa-star"
-        v-for="n in this.emptyStarsFilm"
-      />
+      <!-- Voto -->
+      <div class="cont-voto">
+        <font-awesome-icon
+          icon="fa-solid fa-star"
+          v-for="n in this.FullStarsFilm"
+        />
+        <font-awesome-icon
+          icon="fa-regular fa-star"
+          v-for="n in this.emptyStarsFilm"
+        />
+      </div>
     </div>
   </li>
 </template>
@@ -89,7 +95,12 @@ export default {
 <style lang="scss" scoped>
 li {
   border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 
+  // copertina
   .cont-cover {
     width: 200px;
 
@@ -98,12 +109,42 @@ li {
     }
   }
 
-  .cont-flag {
-    width: 50px;
+  // titoli
+  h3 {
+    margin-top: 30%;
+  }
+  span {
+    color: grey;
+    font-size: 14px;
+  }
 
-    img {
-      width: 100%;
+  // lingua
+  .cont-lingua {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+
+    p {
+      margin: 0;
+      text-transform: uppercase;
     }
+
+    .cont-flag {
+      width: 30px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  // voto
+  .cont-voto {
+    margin-top: 20px;
+    color: rgb(231, 198, 6);
+    font-size: 20px;
   }
 }
 </style>

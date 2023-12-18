@@ -60,10 +60,9 @@ main {
   }
 
   ul {
-    border: 1px solid yellow;
-    background-color: blue;
     width: 90vw;
     margin: 0 auto;
+    padding-left: 0;
   }
 }
 </style>

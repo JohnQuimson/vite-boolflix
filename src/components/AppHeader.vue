@@ -25,7 +25,12 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  background-color: black;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(20, 20, 20, 1) 80%
+  );
   display: flex;
   align-items: center;
   justify-content: space-between;
