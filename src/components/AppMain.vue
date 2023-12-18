@@ -54,6 +54,7 @@ export default {
 
 <style lang="scss" scoped>
 main {
+  padding-top: 100px;
   background-color: #141414;
   color: white;
 
