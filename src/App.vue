@@ -29,6 +29,7 @@ export default {
           params: {
             api_key: store.config.apiKey,
             query: store.searchKey,
+            language: 'it-IT',
           },
         })
         .then((response) => {
@@ -48,6 +49,7 @@ export default {
           params: {
             api_key: store.config.apiKey,
             query: store.searchKey,
+            language: 'it-IT',
           },
         })
         .then((response) => {

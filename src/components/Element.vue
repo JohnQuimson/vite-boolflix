@@ -9,6 +9,7 @@ export default {
     return {
       store,
       maxStars: 5,
+      moreInfo: false,
     };
   },
 
@@ -22,7 +23,12 @@ export default {
     },
   },
 
-  methods: {},
+  methods: {
+    showMoreInfo() {
+      this.moreInfo = !this.moreInfo;
+      console.log('show more info');
+    },
+  },
   created() {},
 };
 </script>
@@ -77,7 +83,7 @@ export default {
       </div>
 
       <!-- Show more -->
-      <button>show more</button>
+      <button @click.stop="showMoreInfo">show more</button>
 
       <!-- Voto -->
       <div class="cont-voto">
@@ -92,11 +98,11 @@ export default {
       </div>
     </div>
 
-    <!-- show more info
+    <!-- show more info -->
     <div class="cont-show-more">
       <div>cast</div>
       <div>generi</div>
-    </div> -->
+    </div>
   </li>
 </template>
 
@@ -213,6 +219,19 @@ li {
   .cont-voto {
     color: rgb(231, 198, 6);
     font-size: 20px;
+  }
+
+  .cont-show-more {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
+    // align-items: center;
+    gap: 10px;
   }
 }
 </style>
