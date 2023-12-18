@@ -37,7 +37,7 @@ export default {
     </ul>
     <!-- SERIE TV -->
     <h2 v-if="store.series.length">Serie TV</h2>
-    <ul>
+    <ul class="row">
       <Serie
         v-for="serie in store.series"
         :imgSerie="serie.poster_path"
