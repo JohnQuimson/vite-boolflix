@@ -31,6 +31,7 @@ export default {
         :imgFilm="film.poster_path"
         :titoloFilm="film.title"
         :titOrigFilm="film.original_title"
+        :overview="film.overview"
         :linguaFilm="film.original_language"
         :votoFilm="film.vote_average"
       />
@@ -43,6 +44,7 @@ export default {
         :imgSerie="serie.poster_path"
         :titoloSerie="serie.name"
         :titOrigSerie="serie.original_name"
+        :overview="serie.overview"
         :linguaSerie="serie.original_language"
         :votoSerie="serie.vote_average"
       />

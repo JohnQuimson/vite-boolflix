@@ -6,6 +6,7 @@ export default {
   props: [
     'titoloSerie',
     'titOrigSerie',
+    'overview',
     'linguaSerie',
     'votoSerie',
     'imgSerie',
@@ -54,6 +55,11 @@ export default {
       <!-- Titoli -->
       <h3>{{ titoloSerie }}</h3>
       <span>original title: {{ titOrigSerie }}</span>
+
+      <!--  Overview -->
+      <div class="cont-overview">
+        <p>{{ overview }}</p>
+      </div>
 
       <!-- Lingua -->
       <div class="cont-lingua" v-if="linguaSerie === 'it'">
@@ -145,6 +151,10 @@ li {
     width: 100%;
     height: 100%;
     padding: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
   }
 
   // titoli
@@ -155,6 +165,12 @@ li {
   span {
     color: grey;
     font-size: 14px;
+  }
+
+  // overview
+  .cont-overview {
+    overflow-y: scroll;
+    max-height: 50%;
   }
 
   // lingua
@@ -185,5 +201,32 @@ li {
     color: rgb(231, 198, 6);
     font-size: 20px;
   }
+}
+
+/* 
+---------------------
+CUSTOM SCROLL-BAR
+---------------------
+*/
+
+/* Larghezza */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Percorso (in questo caso nascosto) */
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* stile scroll-bar */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(110, 110, 110, 0.8);
+  border-radius: 20px;
+}
+
+/* Hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
 }
 </style>
