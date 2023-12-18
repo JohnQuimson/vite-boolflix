@@ -150,7 +150,7 @@ li {
     opacity: 0;
     width: 100%;
     height: 100%;
-    padding: 10%;
+    padding: 5%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -172,6 +172,13 @@ li {
   .cont-overview {
     overflow-y: scroll;
     max-height: 50%;
+    border: 1px solid rgb(58, 58, 58);
+    border-radius: 10px;
+    padding: 5px;
+
+    p {
+      font-size: 14px;
+    }
   }
 
   // lingua
