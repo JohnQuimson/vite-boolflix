@@ -31,7 +31,29 @@
 ## Description
 
 - Milestone 0:
+
   - Progettare la struttura del global state sulla linea degli esercizi svolti nei giorni precedenti.
+
+- Milestone 1:
+
+  - Creare layout base con input e button e far si che alla ricerca, mostri i risultati forniti dall'API.
+    - Titolo
+    - Titolo originale
+    - Lingua
+    - Voto
+
+- Milestone 2:
+
+  - Se la lingua è IT, visualizzare la bandiera dell'Italia; se EN, visualizzare bandiera del Regno Unito
+  - Aggiungere visualizzazione serie tv
+
+- Milestone 3:
+
+  - Aggiungere immagine di Copertina, sempre tramite dati dall'API
+  - Conversione voto numerico in icone stella, che vanno da 1 a 5
+
+- Milestone 4:
+  - Visualizzazione dei dati sotto forma di card, i quali in hover, mostrano le varie info, nascondendo l'immagine
 
 ## How To Use
 
