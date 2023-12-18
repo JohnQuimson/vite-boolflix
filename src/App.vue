@@ -23,7 +23,7 @@ export default {
 
   methods: {
     Search() {
-      //filmsenza
+      //film
       axios
         .get(store.config.apiMoviesUrl, {
           params: {
@@ -61,6 +61,22 @@ export default {
           console.log(error.message);
           this.errorMessage = error.message;
           this.store.series = [];
+        });
+
+      //cast
+      axios
+        .get(store.config.castUrl, {
+          params: {},
+        })
+        .then((response) => {
+          store.films = response.data.results;
+          console.log('Cast');
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.message);
+          this.errorMessage = error.message;
+          this.store.films = [];
         });
 
       store.searchKey = '';
