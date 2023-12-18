@@ -30,6 +30,7 @@ export default {
         :overview="film.overview"
         :lingua="film.original_language"
         :voto="film.vote_average"
+        :id="film.id"
       />
     </ul>
     <!-- SERIE TV -->
@@ -43,6 +44,7 @@ export default {
         :overview="serie.overview"
         :lingua="serie.original_language"
         :voto="serie.vote_average"
+        :id="serie.id"
       />
     </ul>
   </main>

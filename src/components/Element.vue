@@ -1,9 +1,10 @@
 <script>
 import { store } from '../store';
+import axios from 'axios';
 
 export default {
   name: 'Element',
-  props: ['titolo', 'titOrig', 'overview', 'lingua', 'voto', 'foto'],
+  props: ['titolo', 'titOrig', 'overview', 'lingua', 'voto', 'foto', 'id'],
 
   data() {
     return {
@@ -27,13 +28,29 @@ export default {
     showMoreInfo() {
       this.moreInfo = !this.moreInfo;
       console.log('show more info');
+      //cast
+      axios
+        .get(`${store.config.castUrl}${this.id}/credits`, {
+          params: {
+            api_key: store.config.apiKey,
+          },
+        })
+        .then((response) => {
+          store.films = response.data.results;
+          console.log('Cast');
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.message);
+          this.errorMessage = error.message;
+          this.store.cast = [];
+        });
     },
   },
   created() {},
 };
 </script>
 
-<!-- class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 col-xxl-2" -->
 <template>
   <li class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3 col-xxl-2">
     <!-- Copertina -->
@@ -100,7 +117,7 @@ export default {
 
     <!-- show more info -->
     <div class="cont-show-more">
-      <div>cast</div>
+      <div>{{ id }}</div>
       <div>generi</div>
     </div>
   </li>
