@@ -1,7 +1,5 @@
 <script>
-import Film from './Film.vue';
-import Serie from './Serie.vue';
-
+import Element from './Element.vue';
 import { store } from '../store';
 
 export default {
@@ -14,38 +12,37 @@ export default {
   },
 
   components: {
-    Film,
-    Serie,
+    Element,
   },
 };
 </script>
 
 <template>
-  <main>
+  <main v-if="store.films.length">
     <!-- FILM -->
     <h2 v-if="store.films.length">Film</h2>
     <ul class="row">
-      <Film
+      <Element
         v-for="film in store.films"
-        :imgFilm="film.poster_path"
-        :titoloFilm="film.title"
-        :titOrigFilm="film.original_title"
+        :foto="film.poster_path"
+        :titolo="film.title"
+        :titOrig="film.original_title"
         :overview="film.overview"
-        :linguaFilm="film.original_language"
-        :votoFilm="film.vote_average"
+        :lingua="film.original_language"
+        :voto="film.vote_average"
       />
     </ul>
     <!-- SERIE TV -->
     <h2 v-if="store.series.length">Serie TV</h2>
     <ul class="row">
-      <Serie
+      <Element
         v-for="serie in store.series"
-        :imgSerie="serie.poster_path"
-        :titoloSerie="serie.name"
-        :titOrigSerie="serie.original_name"
+        :foto="serie.poster_path"
+        :titolo="serie.name"
+        :titOrig="serie.original_name"
         :overview="serie.overview"
-        :linguaSerie="serie.original_language"
-        :votoSerie="serie.vote_average"
+        :lingua="serie.original_language"
+        :voto="serie.vote_average"
       />
     </ul>
   </main>

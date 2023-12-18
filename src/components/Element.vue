@@ -2,30 +2,23 @@
 import { store } from '../store';
 
 export default {
-  name: 'Film',
-  props: [
-    'titoloFilm',
-    'titOrigFilm',
-    'overview',
-    'linguaFilm',
-    'votoFilm',
-    'imgFilm',
-  ],
+  name: 'Element',
+  props: ['titolo', 'titOrig', 'overview', 'lingua', 'voto', 'foto'],
 
   data() {
     return {
       store,
-      maxStarsFilm: 5,
+      maxStars: 5,
     };
   },
 
   computed: {
-    FullStarsFilm() {
-      return Math.ceil(this.votoFilm / 2);
+    FullStars() {
+      return Math.ceil(this.voto / 2);
     },
 
-    emptyStarsFilm() {
-      return this.maxStarsFilm - this.FullStarsFilm;
+    emptyStars() {
+      return this.maxStars - this.FullStars;
     },
   },
 
@@ -38,11 +31,11 @@ export default {
 <template>
   <li class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3 col-xxl-2">
     <!-- Copertina -->
-    <template v-if="imgFilm !== null">
+    <template v-if="foto !== null">
       <div class="cont-cover">
         <img
-          :src="`${store.imgUrlBase}${imgFilm}`"
-          :alt="`cover-${titoloFilm}`"
+          :src="`${store.imgUrlBase}${foto}`"
+          :alt="`cover-${titolo}`"
           class="img-fluid"
         />
       </div>
@@ -54,8 +47,8 @@ export default {
 
     <div class="info">
       <!-- Titoli -->
-      <h3>{{ titoloFilm }}</h3>
-      <span>original title: {{ titOrigFilm }}</span>
+      <h3>{{ titolo }}</h3>
+      <span>original title: {{ titOrig }}</span>
 
       <!--  Overview -->
       <div class="cont-overview">
@@ -63,15 +56,15 @@ export default {
       </div>
 
       <!-- Lingua -->
-      <div class="cont-lingua" v-if="linguaFilm === 'it'">
-        <p>{{ linguaFilm }}</p>
+      <div class="cont-lingua" v-if="lingua === 'it'">
+        <p>{{ lingua }}</p>
         <div class="cont-flag">
           <img src="../../public/img/it-flag.jpg" alt="it-flag" />
         </div>
       </div>
 
-      <div class="cont-lingua" v-else-if="linguaFilm === 'en'">
-        <p>{{ linguaFilm }}</p>
+      <div class="cont-lingua" v-else-if="lingua === 'en'">
+        <p>{{ lingua }}</p>
         <div class="cont-flag">
           <img src="../../public/img/en-flag.jpg" alt="en-flag" />
         </div>
@@ -79,22 +72,31 @@ export default {
 
       <div class="cont-lingua" v-else>
         <p>
-          {{ linguaFilm }}
+          {{ lingua }}
         </p>
       </div>
+
+      <!-- Show more -->
+      <button>show more</button>
 
       <!-- Voto -->
       <div class="cont-voto">
         <font-awesome-icon
           icon="fa-solid fa-star"
-          v-for="n in this.FullStarsFilm"
+          v-for="n in this.FullStars"
         />
         <font-awesome-icon
           icon="fa-regular fa-star"
-          v-for="n in this.emptyStarsFilm"
+          v-for="n in this.emptyStars"
         />
       </div>
     </div>
+
+    <!-- show more info
+    <div class="cont-show-more">
+      <div>cast</div>
+      <div>generi</div>
+    </div> -->
   </li>
 </template>
 

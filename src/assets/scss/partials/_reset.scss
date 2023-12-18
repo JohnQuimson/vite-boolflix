@@ -10,7 +10,9 @@ CUSTOM SCROLL-BAR
 
 /* Larghezza */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
 }
 
 /* Percorso (in questo caso nascosto) */
