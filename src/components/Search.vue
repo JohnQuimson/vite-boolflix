@@ -19,8 +19,7 @@ export default {
       <label for="Search"></label>
       <input type="text" placeholder="Cerca" v-model="store.searchKey" />
       <button type="submit">
-        🔍
-        <!-- <font-awesome-icon icon="fa-solid fa-magnifying-glass" /> -->
+        <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
       </button>
     </form>
   </div>
