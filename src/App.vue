@@ -5,6 +5,7 @@ import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
 import { store } from './store.js';
 
+
 export default {
   name: 'App',
 
@@ -72,12 +73,13 @@ export default {
 <template>
   <div class="cont-master">
     <div>
-      <AppHeader @call="Search()" />
-      <AppMain />
+      <AppHeader @call="Search" />
+      <AppMain @call="Search" />
       <AppFooter />
     </div>
   </div>
 </template>
+
 
 <style lang="scss">
 @use './assets/scss/style.scss' as *;

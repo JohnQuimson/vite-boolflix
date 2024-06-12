@@ -1,6 +1,8 @@
 <script>
 import Element from './Element.vue';
 import { store } from '../store';
+import Search from './Search.vue';
+import Logo from './Logo.vue';
 
 export default {
   name: 'Main',
@@ -13,12 +15,18 @@ export default {
 
   components: {
     Element,
+    Search,
+    Logo,
   },
 };
 </script>
 
 <template>
-  <main v-if="store.films.length">
+  <main v-if="store.films.length == []">
+    <Logo />
+    <Search @call="$emit('call')" />
+  </main>
+  <main v-else>
     <!-- FILM -->
     <h2 v-if="store.films.length">Film</h2>
     <ul class="row">

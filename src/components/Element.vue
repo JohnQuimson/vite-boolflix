@@ -27,18 +27,19 @@ export default {
   methods: {
     showMoreInfo() {
       this.moreInfo = !this.moreInfo;
-      console.log('show more info');
+      console.log('show more info cliked');
       //cast
       axios
         .get(`${store.config.castUrl}${this.id}/credits`, {
           params: {
             api_key: store.config.apiKey,
+            language: 'it-IT',
           },
         })
         .then((response) => {
-          store.films = response.data.results;
-          console.log('Cast');
+          store.cast = response.data.cast.name;
           console.log(response);
+          console.log(`array cast: ${store.cast}`);
         })
         .catch((error) => {
           console.log(error.message);
@@ -104,21 +105,15 @@ export default {
 
       <!-- Voto -->
       <div class="cont-voto">
-        <font-awesome-icon
-          icon="fa-solid fa-star"
-          v-for="n in this.FullStars"
-        />
-        <font-awesome-icon
-          icon="fa-regular fa-star"
-          v-for="n in this.emptyStars"
-        />
+        <font-awesome-icon icon="fa-solid fa-star" v-for="n in FullStars" />
+        <font-awesome-icon icon="fa-regular fa-star" v-for="n in emptyStars" />
       </div>
     </div>
 
     <!-- show more info -->
     <div class="cont-show-more">
-      <div>{{ id }}</div>
-      <div>generi</div>
+      <div v-for="(actor, index) in store.cast">{{ actor.name }}</div>
+      <div></div>
     </div>
   </li>
 </template>
@@ -155,6 +150,7 @@ li {
   .cont-cover {
     width: 100%;
     height: 100%;
+    opacity: 1;
 
     img {
       width: 100%;

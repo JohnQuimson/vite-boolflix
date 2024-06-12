@@ -1,12 +1,16 @@
 <script>
 import Search from './Search.vue';
 import Logo from './Logo.vue';
+import { store } from '../store';
+
 
 export default {
   name: 'Main',
 
   data() {
-    return {};
+    return {
+      store
+    };
   },
 
   components: {
@@ -17,10 +21,14 @@ export default {
 </script>
 
 <template>
-  <header>
+  <header v-if="store.films.length == []">
+    
+  </header>
+  <header v-else>
     <Logo />
     <Search @call="$emit('call')" />
   </header>
+  
 </template>
 
 <style lang="scss" scoped>
