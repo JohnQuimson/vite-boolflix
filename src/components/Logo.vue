@@ -12,13 +12,13 @@ export default {
 
 <template>
   <div class="cont-logo">
-    <img src="../../public/img/logo/logo.svg" alt="logo" />
+    <img src="../../public/img/logo/boolflix_logo.png" alt="logo" />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .cont-logo {
-  width: 250px;
+  width: clamp(300px, 30vw, 1000px);
   padding: 20px;
 
   img {

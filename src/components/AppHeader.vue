@@ -25,7 +25,7 @@ export default {
     
   </header>
   <header v-else>
-    <Logo />
+    <Logo class="header-logo"/>
     <Search @call="$emit('call')" />
   </header>
   
@@ -47,5 +47,9 @@ header {
   right: 0;
   left: 0;
   z-index: 2;
+
+  .header-logo{
+    width: 10%;
+  }
 }
 </style>

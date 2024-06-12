@@ -37,6 +37,7 @@ form {
     border-radius: 5px;
     padding-left: 10px;
     color: rgb(165, 165, 165);
+    width: clamp(200px, 20vw, 1000px);
   }
 
   button {

@@ -22,9 +22,11 @@ export default {
 </script>
 
 <template>
-  <main v-if="store.films.length == []">
-    <Logo />
+  <main class="home-main vh-100 d-flex flex-column justify-content-center align-items-center" v-if="store.films.length == []">
+    <div class="container cont-home ">
+      <Logo/>
     <Search @call="$emit('call')" />
+    </div>
   </main>
   <main v-else>
     <!-- FILM -->
@@ -59,8 +61,32 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+
+@keyframes slide {
+  from {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+
+.home-main{
+
+  .cont-home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: 1s slide linear;
+    
+  }
+
+}
 main {
-  padding-top: 100px;
   background-color: #141414;
   color: white;
 
